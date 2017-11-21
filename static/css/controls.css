@@ -1,0 +1,136 @@
+.panel-default>.panel-heading {
+    background-color: #fff;
+}
+
+.card {
+    padding: 0 10px 10px 10px;
+}
+
+.card .panel-heading{
+    height: 40px;
+    line-height: 40px;
+    padding: 0 15px;
+}
+
+.card .panel-heading .save{
+    height: 40px;
+    line-height: 40px;
+    float: right;
+    cursor: pointer;    
+}
+
+.card .panel-body .col {
+    padding: 0;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.card .panel-body .col .tag, .card table tbody td .tag {
+    border: 1px #ccc solid;
+    border-radius: 50px;
+    font-size: 14px;
+    padding: 3px 5px;
+    text-align: center;
+    width: 90%;
+    display: inline-block;
+}
+
+.card .panel-body .col .tag:hover, .card table tbody td .tag:hover{
+    background-color: #5574ff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.card table tbody td .tag {
+    width: auto;
+    padding: 3px 15px;
+}
+
+.card .media-list .media .media-heading {
+    color: #748bff;
+}
+
+.card .media-list .media .media-left img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+.card .media-list .media .media-body .introduction {
+    margin: 25px 0 5px;
+}
+
+.card .media-list .media .media-body .introduction li {
+    background-repeat: no-repeat;
+    background-size: inherit;
+    background-position: left top;
+    padding-left: 30px;
+    margin-bottom: 10px;
+}
+
+.card table .media-list .media .media-left img {
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+}
+
+.card table .media-list .media .media-body .introduction {
+    margin: 10px 0 5px;
+}
+
+.card table .media-list .media .media-body .introduction li {
+    padding-left: 0px;
+    margin-bottom: 0px;
+}
+
+.card .myTab {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
+.card .myTab .tab-pane, {
+    padding: 10px 15px;
+}
+
+.card .rgzn {
+    padding: 0 10px;
+    height: 40px;
+}
+
+.card .rgzn>span {
+    border-bottom: 3px solid #5574ff;
+    padding: 10px;
+    display: inline-block;
+}
+
+.card .rgzn .form {
+    float: right;
+    height: 100%;
+    line-height: 40px;
+}
+
+.card .rgzn .form .form-group {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.card .myTab .myTable {
+    padding: 10px 10px 0;
+}
+
+.card .myTab .myTable table {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+}
+
+.card .myTab .myTable table tr th {
+    border: 1px solid #ddd;
+    text-align: center;
+    background-color: #f1f2fa;
+    vertical-align: middle;
+}

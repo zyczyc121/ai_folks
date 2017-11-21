@@ -1,0 +1,205 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- saved from url=(0021)https://biendata.com/ -->
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="icon" type="image/png" href="https://biendata.com/static/img/favicon.png">
+
+    <title>人才库</title>
+
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet" type="text/css" />
+    <link href="{% static "css/font-awesome.min.css" %}" rel="stylesheet" />
+    
+    <link href="{% static "/css/style.css" %}" rel="stylesheet" type="text/css" />
+    <link href="{% static "/css/controls.css" %}" rel="stylesheet" type="text/css" media="screen,projection" />
+    <link href="{% static "/css/common.css" %}" rel="stylesheet" type="text/css" />
+
+    <script type="application/javascript" src="{% static "js/jquery-1.11.3.min.js" %}" ></script>
+    <script type="application/javascript" src="{% static "js/bootstrap.min.js" %}" ></script>
+
+</head>
+
+<body class='index'>
+    <div class='head'>
+        <div class='login'>
+                DeepTech
+        </div>
+        <div class='nav'>
+            <span aria-hidden="true" class="glyphicon glyphicon-search"></span>
+            <input type="text" placeholder="搜索">
+        </div>
+        <div class='admin' id='admin-user-info'>
+        <a>
+            <span class='admin-background'>
+                <span class='fa fa-user'></span>
+                用户名
+            </span>
+            <span aria-hidden="true" class="glyphicon glyphicon-chevron-down"></span>
+        </a>
+        <div class='user-center'>
+            <a href='/user/logout'>退出</a>
+        </div>
+    </div>
+    </div>
+    <div class='body'>
+        <div class="menu">
+            <div class="panel-group table-responsive" role="tablist" id='accordion' aria-multiselectable="true">
+                <div class="panel panel-primary leftMenu">
+                    <!-- 利用data-target指定要折叠的分组列表 -->
+                    <div class="panel-heading" id="collapseListGroupHeading1" data-toggle="collapse" data-parent="#accordion"  data-target="#collapseListGroup1" role="tab" >
+                        <h4 class="panel-title">
+                            <i class="fa fa-star"></i>
+                            榜单
+                            <span aria-hidden="true" class="glyphicon glyphicon-chevron-up right"></span>
+                        </h4>
+                    </div>
+                    <!-- .panel-collapse和.collapse标明折叠元素 .in表示要显示出来 -->
+                    <div id="collapseListGroup1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="collapseListGroupHeading1">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <!-- 利用data-target指定URL -->
+                                <a href="{% url 'scholar:field_rank' 'artificial intelligence' %}" class="menu-item-left">
+                                    人工智能
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{% url 'scholar:field_rank' 'Machine learning' %}" class="menu-item-left">
+                                    机器学习
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{% url 'scholar:field_rank' 'Data mining' %}" class="menu-item-left">
+                                    数据挖掘
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{% url 'scholar:field_rank' 'computer networking' %}" class="menu-item-left">
+                                    计算机网络
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{% url 'scholar:field_rank' 'natural language processing' %}" class="menu-item-left">
+                                    NLP
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{% url 'scholar:field_rank' 'computer vision' %}" class="menu-item-left">
+                                    计算机视觉
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{% url 'scholar:field_rank' 'multimedia' %}" class="menu-item-left">
+                                    多媒体
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{% url 'scholar:field_rank' 'computer graphics' %}" class="menu-item-left">
+                                    计算机图形
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{% url 'scholar:field_rank' 'web-infomation' %}" class="menu-item-left">
+                                    网络语义
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{% url 'scholar:field_rank' 'database' %}" class="menu-item-left">
+                                    数据库
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!--panel end-->
+                <div class="panel panel-primary leftMenu">
+                    <div class="panel-heading collapsed" id="collapseListGroupHeading2" data-toggle="collapse" data-parent="#accordion"  data-target="#collapseListGroup2" role="tab" >
+                        <h4 class="panel-title">
+                            <i class="fa fa-user"></i>
+                            人才库
+                            <span class="glyphicon glyphicon-chevron-down right"></span>
+                        </h4>
+                    </div>
+                    <div id="collapseListGroup2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading2">
+                        <ul class="list-group">
+                        </ul>
+                    </div>
+                </div>  
+                <div class="panel panel-primary leftMenu">
+                    <div class="panel-heading collapsed" id="collapseListGroupHeading3" data-toggle="collapse" data-parent="#accordion"  data-target="#collapseListGroup3" role="tab" >
+                        <h4 class="panel-title">
+                            <i class="fa fa-list-alt"></i>
+                            论文
+                            <span class="glyphicon glyphicon-chevron-down right"></span>
+                        </h4>
+                    </div>
+                    <div id="collapseListGroup3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading3">
+                        <ul class="list-group">
+                        </ul>
+                    </div>
+                </div>  
+                <div class="panel panel-primary leftMenu">
+                    <div class="panel-heading collapsed" id="collapseListGroupHeading4" data-toggle="collapse" data-parent="#accordion"  data-target="#collapseListGroup4" role="tab" >
+                        <h4 class="panel-title">
+                            <i class="fa fa-video-camera"></i>
+                            媒体报道
+                            <span class="glyphicon glyphicon-chevron-down right"></span>
+                        </h4>
+                    </div>
+                    <div id="collapseListGroup4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading4">
+                        <ul class="list-group">
+                        </ul>
+                    </div>
+                </div>  
+                <div class="panel panel-primary leftMenu">
+                    <div class="panel-heading collapsed" id="collapseListGroupHeading5" data-toggle="collapse" data-parent="#accordion"  data-target="#collapseListGroup5" role="tab" >
+                        <h4 class="panel-title">
+                            <i class="fa fa-lightbulb-o"></i>
+                            专利
+                            <span class="glyphicon glyphicon-chevron-down right"></span>
+                        </h4>
+                    </div>
+                    <div id="collapseListGroup5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading5">
+                        <ul class="list-group">
+                        </ul>
+                    </div>
+                </div>  
+                <div class="panel panel-primary leftMenu">
+                    <div class="panel-heading collapsed" id="collapseListGroupHeading6" data-toggle="collapse" data-parent="#accordion"  data-target="#collapseListGroup6" role="tab" >
+                        <h4 class="panel-title">
+                            <i class="fa fa-magic"></i>
+                            定制人才库
+                            <span class="glyphicon glyphicon-chevron-down right"></span>
+                        </h4>
+                    </div>
+                    <div id="collapseListGroup6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading6">
+                        <ul class="list-group">
+                        </ul>
+                    </div>
+                </div>  
+            </div>
+        </div>
+        <div class="content">
+          {% block content %}{% endblock %}
+        </div>
+    </div>
+    </div>
+    <script>
+    $(function(){
+        $(".panel-heading").click(function(e){
+            /*切换折叠指示图标*/
+            $(this).find("span.right").toggleClass("glyphicon-chevron-down");
+            $(this).find("span.right").toggleClass("glyphicon-chevron-up");
+            
+            // $('.panel-heading.collapsed').find('.panel-title>span.right').removeClass('glyphicon-chevron-up');
+            // $('.panel-heading.collapsed').find('.panel-title>span.right').removeClass('glyphicon-chevron-down');
+            // $('.panel-heading.collapsed').find('.panel-title>span.right').addClass('glyphicon-chevron-down');
+        });
+    });
+    </script>
+
+
+</body>
+
+</html>

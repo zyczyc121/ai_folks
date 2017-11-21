@@ -1,0 +1,133 @@
+{% extends "scholar/base.html" %}
+{% load staticfiles %}
+{% block content %}
+            <div class=' row'>
+                <div class='col-xs-8 card'>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">{{ scholar.name }}</div>
+                        <div class="panel-body" style='height: 300px;overflow:auto;padding: 0 15px;margin: 10px 0;'>
+                            <ul class="media-list">
+                                <li class="media">
+                                    <div class="media-left">
+                                        <a href="#">
+                                            <img class="media-object" src={{ scholar.photourl }} alt="头像">
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">
+                                            <a href="#">{{ scholar.name }}</a>
+                                        </h4>
+                                        <ul class="introduction">
+                                            <li style='background-image: url("{% static "img/name.jpg" %}")'>{{ scholar.position }}</li>
+                                            <li style='background-image: url("{% static "img/addr.png" %}")'>{{ scholar.affiliation }}</li>
+                                            <li style='background-image: url("{% static "img/phone.jpg" %}")'></li>
+                                            <li style='background-image: url("{% static "img/email.jpg" %}")'>{{ scholar.email }}</li>
+                                            <li style='background-image: url("{% static "img/url.jpg" %}")'>{{ scholar.homepage }}</li>
+                                            <li style='background-image: url("{% static "img/education.jpg" %}")'>
+                                             {{ scholar.graduateschool }}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-xs-4 card'>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">学术指标</div>
+                        <div class="panel-body" style='height: 300px;overflow:auto;padding: 0 15px;margin: 10px 0;'>
+                            Panel content
+                        </div>
+                    </div>
+                </div>
+
+                <div class='col-xs-6 card'>
+
+                    <div class='col-xs-12 card'>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                个人标签
+                                <span class='save'>添加</span>
+                            </div>
+                            <div class="panel-body user-tag" style='height: 90px;overflow:auto;padding: 10px 15px 0;margin: 10px 0;'>
+                                <span class='col-xs-3 col'><span class='tag'>顶级学府</span></span>
+                                <span class='col-xs-3 col'><span class='tag'>顶级学府</span></span>
+                                <span class='col-xs-3 col'><span class='tag'>顶级学府</span></span>
+                                <span class='col-xs-3 col'><span class='tag'>……</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class='col-xs-12 card'>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                研究兴趣
+                                <span class='save'>添加</span>
+                            </div>
+                            <div class="panel-body user-tag" style='height: 150px;overflow:auto;padding: 10px 15px 0;margin: 10px 0;'>
+			      {{ scholar.keywords }}
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class='col-xs-6 card'>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            学术指标
+                            <span class='save'>添加</span>
+                        </div>
+                        <div class="panel-body user-tag" style='height: 330px;overflow:auto;padding: 0 15px 0;margin: 10px 0;'>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class='col-xs-12 card'>
+                    <div class='myTab'>
+                        <ul id="myTab" class="nav nav-tabs">
+                            <li class="active">
+                                <a href="#paper" data-toggle="tab">
+                                        paper
+                                </a>
+                            </li>
+                            <li><a href="#report" data-toggle="tab">report</a></li>
+                            <li><a href="#patent" data-toggle="tab">patent</a></li>
+                        </ul>
+                    
+                        <div id="myTabContent" class="tab-content">
+                            <div class="tab-pane fade in active" id="paper">
+                                <table class="table table-striped">
+                                    <tbody>
+                                        <tr>
+                                            <td width='10%'>
+                                                <span style='font-size: 24px;'>918</span>
+                                            </td>
+                                            <td width='40%'>
+                                                Mining Reliable Information from Passively and Actively Crowdsourced Data.
+                                            </td>
+                                            <td width='40%'>
+                                                <p style='color: #9fb0ff'>
+                                                    Jing Gao, Qi Li, <span style='color:#5574ff'>Bo Zhao</span>, Wei Fan, <span style='color: #ff6367'>Jiawei Han</span>
+                                                </p>
+                                            </td>
+                                            <td width='10%'>
+                                                <p style='color: #888991'>KDD(2016)</p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="tab-pane fade" id="report">
+                                <p>内容</p>
+                            </div>
+                            <div class="tab-pane fade" id="patent">
+                                <p>内容</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}
