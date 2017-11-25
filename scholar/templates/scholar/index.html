@@ -51,10 +51,11 @@
                                 <span class='save'>添加</span>
                             </div>
                             <div class="panel-body user-tag" style='height: 90px;overflow:auto;padding: 10px 15px 0;margin: 10px 0;'>
-                                <span class='col-xs-3 col'><span class='tag'>顶级学府</span></span>
-                                <span class='col-xs-3 col'><span class='tag'>顶级学府</span></span>
-                                <span class='col-xs-3 col'><span class='tag'>顶级学府</span></span>
-                                <span class='col-xs-3 col'><span class='tag'>……</span></span>
+			        {% for item in scholar.tag_set.all %}
+                                    <span class='col-xs-3 col'><span class='tag'>
+					<a href="{%url 'scholar:tag_search' item %}">{{ item }}</a>
+				    </span></span>
+				{% endfor %}
                             </div>
                         </div>
                     </div>

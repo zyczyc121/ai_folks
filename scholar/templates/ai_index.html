@@ -69,11 +69,9 @@
                                             </div>
                                         </td>
                                         <td>
-					    {% for item in person.tag_set.all %}					       
-					        {% if item.user_id == request.user.id or item.user == None %}
-                                                    <span class='tag'><a href="{% url 'scholar:tag_search' item %}">{{ item }}</a></span>
-						{% endif %}
-					    {% endfor%}
+                                            <span class='tag'>顶级学府</span>
+                                            <span class='tag'>顶级学府</span>
+                                            <span class='tag'>顶级学府</span>
                                         </td>
                                     </tr>
                                 </tbody>
