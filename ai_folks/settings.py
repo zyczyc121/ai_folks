@@ -128,3 +128,13 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'smtp.163.com'
+EMAIL_HOST_USER = 'npbool_test@163.com'
+EMAIL_HOST_PASSWORD = 'pnpghclhxllubdrn'
+EMAIL_HOST_SSL = False
+EMAIL_PORT = 25
+EMAIL_FROM = 'npbool_test@163.com'
+EMAIL_TIMEOUT = 60
+DEFAULT_FROM_EMAIL = 'npbool_test@163.com'
