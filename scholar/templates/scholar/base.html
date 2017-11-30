@@ -19,6 +19,7 @@
 
     <script type="application/javascript" src="{% static "js/jquery-1.11.3.min.js" %}" ></script>
     <script type="application/javascript" src="{% static "js/bootstrap.min.js" %}" ></script>
+    <script src="https://cdn.bootcss.com/echarts/3.8.5/echarts.js"></script>
 
 </head>
 
@@ -76,22 +77,22 @@
                         <ul class="list-group">
                             <li class="list-group-item">
                                 <!-- 利用data-target指定URL -->
-                                <a href="{% url 'scholar:field_rank' 'artificial intelligence' %}" class="menu-item-left">
+                                <a href="{% url 'scholar:field_rank' 'artificial intellgience' %}" class="menu-item-left">
                                     人工智能
                                 </a>
                             </li>
                             <li class="list-group-item">
-                                <a href="{% url 'scholar:field_rank' 'Machine learning' %}" class="menu-item-left">
+                                <a href="{% url 'scholar:field_rank' 'machine learning' %}" class="menu-item-left">
                                     机器学习
                                 </a>
                             </li>
                             <li class="list-group-item">
-                                <a href="{% url 'scholar:field_rank' 'Data mining' %}" class="menu-item-left">
+                                <a href="{% url 'scholar:field_rank' 'data mining' %}" class="menu-item-left">
                                     数据挖掘
                                 </a>
                             </li>
                             <li class="list-group-item">
-                                <a href="{% url 'scholar:field_rank' 'computer networking' %}" class="menu-item-left">
+                                <a href="{% url 'scholar:field_rank' 'omputer networking' %}" class="menu-item-left">
                                     计算机网络
                                 </a>
                             </li>
@@ -101,7 +102,7 @@
                                 </a>
                             </li>
                             <li class="list-group-item">
-                                <a href="{% url 'scholar:field_rank' 'computer vision' %}" class="menu-item-left">
+                                <a href="{% url 'scholar:field_rank' 'omputer graphi' %}" class="menu-item-left">
                                     计算机视觉
                                 </a>
                             </li>
@@ -111,13 +112,13 @@
                                 </a>
                             </li>
                             <li class="list-group-item">
-                                <a href="{% url 'scholar:field_rank' 'computer graphics' %}" class="menu-item-left">
-                                    计算机图形
+                                <a href="{% url 'scholar:field_rank' 'web-information search' %}" class="menu-item-left">
+                                    网络语义
                                 </a>
                             </li>
-                            <li class="list-group-item">
-                                <a href="{% url 'scholar:field_rank' 'web-infomation' %}" class="menu-item-left">
-                                    网络语义
+			    <li class="list-group-item">
+                                <a href="{% url 'scholar:field_rank' 'ystem' %}" class="menu-item-left">
+                                    计算机系统
                                 </a>
                             </li>
                             <li class="list-group-item">
@@ -125,9 +126,30 @@
                                     数据库
                                 </a>
                             </li>
+			    <li class="list-group-item">
+                                <a href="{% url 'scholar:field_rank' 'ecurity' %}" class="menu-item-left">
+                                    计算机安全
+                                </a>
+                            </li>
+			    <li class="list-group-item">
+                                <a href="{% url 'scholar:field_rank' 'human-computern interaction' %}" class="menu-item-left">
+                                    人机交互
+                                </a>
+                            </li>
+			    <li class="list-group-item">
+                                <a href="{% url 'scholar:field_rank' 'oftware engineering' %}" class="menu-item-left">
+                                    软件工程
+                                </a>
+                            </li>
+			    <li class="list-group-item">
+                                <a href="{% url 'scholar:field_rank' 'theory' %}" class="menu-item-left">
+                                    计算机理论
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div><!--panel end-->
+		<!--
                 <div class="panel panel-primary leftMenu">
                     <div class="panel-heading collapsed" id="collapseListGroupHeading2" data-toggle="collapse" data-parent="#accordion"  data-target="#collapseListGroup2" role="tab" >
                         <h4 class="panel-title">
@@ -192,7 +214,8 @@
                         <ul class="list-group">
                         </ul>
                     </div>
-                </div>  
+                </div>
+		-->
             </div>
         </div>
         <div class="content">

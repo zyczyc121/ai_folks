@@ -33,18 +33,19 @@
                         </div>
                     </div>
                 </div>
+		
                 <div class='col-xs-4 card'>
                     <div class="panel panel-default">
                         <div class="panel-heading">学术指标</div>
                         <div class="panel-body" style='height: 300px;overflow:auto;padding: 0 15px;margin: 10px 0;'>
-                            Panel content
+                            Coming soon
                         </div>
                     </div>
                 </div>
 
                 <div class='col-xs-6 card'>
 
-                    <div class='col-xs-12 card'>
+                    <div class='col-xs-12 card' style="padding: 0 0px 10px;">
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 个人标签
@@ -60,15 +61,16 @@
                         </div>
                     </div>
                     
-                    <div class='col-xs-12 card'>
+                    <div class='col-xs-12 card' style="padding: 0 0px 10px;">
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 研究兴趣
                                 <span class='save'>添加</span>
                             </div>
-                            <div class="panel-body user-tag" style='height: 150px;overflow:auto;padding: 10px 15px 0;margin: 10px 0;'>
-			      {{ scholar.keywords }}
+			    <div class="panel-body user-tag" style='height: 170px;overflow:auto;padding: 10px 15px 0;margin: 10px 0;'>
+                                    <div id="main" style="width: 100%;height:100%;"></div>                                    
                             </div>
+
                         </div>
                     </div>
 
@@ -80,11 +82,14 @@
                             学术指标
                             <span class='save'>添加</span>
                         </div>
-                        <div class="panel-body user-tag" style='height: 330px;overflow:auto;padding: 0 15px 0;margin: 10px 0;'>
+			<div class="panel-body user-tag" style='height: 330px;overflow:auto;padding: 0 15px 0;margin: 10px 0;'>
+			        Coming soon
+                                <div id="main2" style="width: 100%;height:100%;"></div>                                    
                         </div>
+
                     </div>
                 </div>
-                
+                <!--                
                 <div class='col-xs-12 card'>
                     <div class='myTab'>
                         <ul id="myTab" class="nav nav-tabs">
@@ -129,6 +134,139 @@
                         </div>
                     </div>
                 </div>
+		-->
             </div>
         </div>
+        <script>
+	  function initEchar(array,key) {
+            var myChart = echarts.init(document.getElementById('main'));
+
+            option = {
+
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'line',
+                        lineStyle: {
+                            color: 'rgba(0,0,0,0.2)',
+                            width: 1,
+                            type: 'solid'
+                        }
+                    }
+                },
+
+                legend: {
+                    data: key
+                },
+
+                singleAxis: {
+                    top: 50,
+                    bottom: 50,
+                    axisTick: {},
+                    axisLabel: {},
+                    type: 'time',
+                    axisPointer: {
+                        animation: true,
+                        label: {
+                            show: true
+                        }
+                    },
+                    splitLine: {
+                        show: true,
+                        lineStyle: {
+                            type: 'dashed',
+                            opacity: 0.2
+                        }
+                    }
+                },
+
+                series: [
+                    {
+                        type: 'themeRiver',
+                        itemStyle: {
+                            emphasis: {
+                                shadowBlur: 20,
+                                shadowColor: 'rgba(0, 0, 0, 0.8)'
+                            }
+                        },
+                        data: array
+                    }
+                ]
+            };
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+        }
+
+        function initEchar2() {
+            var myChart = echarts.init(document.getElementById('main2'));
+
+            option = {
+                tooltip: {},
+                legend: {
+                    data: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）'],
+                },
+                grid: {
+                    top: '20',
+                    containLabel: true,
+                },
+                radar: {
+                    // shape: 'circle',
+                    name: {
+                        textStyle: {
+                            color: '#fff',
+                            backgroundColor: '#999',
+                            borderRadius: 3,
+                            padding: [3, 5]
+                       }
+                    },
+                    indicator: [
+                       { name: '销售（sales）', max: 6500},
+                       { name: '管理（Administration）', max: 16000},
+                       { name: '信息技术（Information Techology）', max: 30000},
+                       { name: '客服（Customer Support）', max: 38000},
+                       { name: '研发（Development）', max: 52000},
+                       { name: '市场（Marketing）', max: 25000}
+                    ]
+                },
+                series: [{
+                    name: '预算 vs 开销（Budget vs spending）',
+                    type: 'radar',
+                    // areaStyle: {normal: {}},
+                    data : [
+                        {
+                            value : [4300, 10000, 28000, 35000, 50000, 19000],
+                            name : '预算分配（Allocated Budget）'
+                        },
+                         {
+                            value : [5000, 14000, 28000, 31000, 42000, 21000],
+                            name : '实际开销（Actual Spending）'
+                        }
+                    ]
+                }]
+            };
+
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+        }
+
+
+	$.ajax({
+                url:"https://api.aminer.org/api/person/interests/{{ scholar.guid }}",
+                success:function(result){
+	            let array = [];
+	            let key = [];
+	            for (let obj of result.interests) {
+	  for (let v of obj.values) {
+	  let value = [v[0], v[1], obj.key];
+	  array.push(value);
+          console.log(value)
+	  }
+	                key.push(obj.key)
+}
+
+                    initEchar(array, key);
+                }
+        });
+
+	</script>
 {% endblock %}

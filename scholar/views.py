@@ -7,7 +7,7 @@ def index(request):
 # Create your views here.
 
 
-def field_rank(request, field = 'Data mining'):
+def field_rank(request, field = 'data mining'):
     context = {'scholars': Scholar.objects.filter(classification = field)}
     return render(request, 'scholar/list.html', context)
 
