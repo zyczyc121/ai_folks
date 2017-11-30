@@ -142,10 +142,11 @@ STATICFILES_DIRS = (
 
 #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST = 'smtp.163.com'
-EMAIL_HOST_USER = 'npbool_test@163.com'
-EMAIL_HOST_PASSWORD = 'pnpghclhxllubdrn'
+EMAIL_HOST_USER = 'ebonzhao@163.com'
+EMAIL_HOST_PASSWORD = 'zhangqian+66'
 EMAIL_HOST_SSL = False
 EMAIL_PORT = 25
-EMAIL_FROM = 'npbool_test@163.com'
+EMAIL_FROM = 'ebonzhao@163.com'
 EMAIL_TIMEOUT = 60
-DEFAULT_FROM_EMAIL = 'npbool_test@163.com'
+DEFAULT_FROM_EMAIL = 'ebonzhao@163.com'
+
